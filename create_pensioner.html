@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Pensioner</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Pensioner Aplication</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/pensioners}">Pensioner Management</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+	<div class = "container">
+		<div class = "row">
+			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class = "text-center"> Pensioner </h1>
+				<div class = "card-body">
+					<form th:action="@{/pensioners}" th:object = "${pensioner}" method="POST">
+						<div class ="form-group">
+							<label> Name </label>
+							<input
+							type = "text"
+							name = "name"
+							th:field = "*{name}"
+							class = "form-control"
+							placeholder="Enter full Name" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Contact </label>
+							<input
+							type = "tel"
+							name = "mobile"
+							th:field = "*{mobile}"
+							class = "form-control"
+							placeholder="Enter Mobile Number" 
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> Email </label>
+							<input
+							type = "email"
+							name = "emailId"
+							th:field = "*{emailId}"
+							class = "form-control"
+							placeholder="Enter Email Address" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Aadhar </label>
+							<input
+							type = "tel"
+							name = "aadhar"
+							th:field = "*{aadhar}"
+							class = "form-control"
+							placeholder="Enter Adhar Number" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> D.O.B </label>
+							<input
+							type = "date"
+							name = "dob"
+							th:field = "*{dob}"
+							class = "form-control"
+							placeholder=" " 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Address </label>
+							<input
+							type = "text"
+							name = "address"
+							th:field = "*{address}"
+							class = "form-control"
+							placeholder="Enter Address" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Account No. </label>
+							<input
+							type = "number"
+							name = "accountNumber"
+							th:field = "*{accountNumber}"
+							class = "form-control"
+							placeholder="Enter Account Number" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Basic Salary </label>
+							<input
+							type = "text"
+							name = "basicSalary"
+							th:field = "*{basicSalary}"
+							class = "form-control"
+							placeholder="Enter Basic salary" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> DA </label>
+							<input
+							type = "text"
+							name = "dearnessAllowance"
+							th:field = "*{dearnessAllowance}"
+							class = "form-control"
+							placeholder="Enter Dearness Allowance" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Designation </label>
+							<input
+							type = "text"
+							name = "designation"
+							th:field = "*{designation}"
+							class = "form-control"
+							placeholder="Enter Designation" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Department </label>
+							<input
+							type = "text"
+							name = "department"
+							th:field = "*{department}"
+							class = "form-control"
+							placeholder="Enter Department" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Live Certificate </label>
+							<input
+							type = "file"
+							name = "liveCertificate"
+							th:field = "*{liveCertificate}"
+							class = "form-control"
+							placeholder=" " 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Death Certificate </label>
+							<input
+							type = "file"
+							name = "deathCertificate"
+							th:field = "*{deathCertificate}"
+							class = "form-control"
+							placeholder=" " 
+							/>
+						</div>
+
+						<!--div class ="form-group">
+							<label> Image </label>
+							<input
+							type = "file"
+							name = "image"
+							th:field = "*{image}"
+							class = "form-control"
+							placeholder=" " 
+							/>
+						</div-->
+
+						<h5 class = "text-center"> Create Nominee </h5>
+						<div class ="form-group">
+							<label> Name </label>
+							<input
+							type = "text"
+							name = "nomineeName"
+							th:field = "*{nomineeName}"
+							class = "form-control"
+							placeholder="Enter full Name" 
+							/>
+						</div>
+						
+							<div class ="form-group">
+							<label> Address </label>
+							<input
+							type = "text"
+							name = "nomineeAddress"
+							th:field = "*{nomineeAddress}"
+							class = "form-control"
+							placeholder="Enter Address" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Contact </label>
+							<input
+							type = "tel"
+							name = "nomineeMobile"
+							th:field = "*{nomineeMobile}"
+							class = "form-control"
+							placeholder="Enter Mobile Number" 
+							/>
+						</div>
+
+						<div class ="form-group">
+							<label> Email </label>
+							<input
+							type = "email"
+							name = "nomineeEmailId"
+							th:field = "*{nomineeEmailId}"
+							class = "form-control"
+							placeholder="Enter Email Address" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Aadhar </label>
+							<input
+							type = "tel"
+							name = "nomineeAadhar"
+							th:field = "*{nomineeAadhar}"
+							class = "form-control"
+							placeholder="Enter Aadhar Number" 
+							/>
+						</div>
+						
+						
+						<!--div class ="form-group">
+							<label> Image </label>
+							<input
+							type = "file"
+							name = "n_pic"
+							th:field = "*{Image}"
+							class = "form-control"
+							placeholder=" " 
+							/>
+						</div-->
+
+						<div class = "box-footer">
+							<button type="submit" class = "btn btn-primary">
+								Submit
+							</button>
+						</div>
+					</form>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

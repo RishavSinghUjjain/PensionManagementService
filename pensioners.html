@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Pensioner Application</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Pensioner Management System</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/pensioners}">Pensioner Management</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/pensioners}">Pensioner Management</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+	<div class ="container">
+		<div class = "row">
+			<h1> List Pensioners </h1>
+		</div>
+		
+		<div class = "row">
+			<div class = "col-lg-3">
+				<a th:href = "@{/pensioners/new}" class = "btn btn-primary btn-sm mb-3"> Add Pensioner</a>
+			</div>
+		</div>
+		<table class = "table table-striped table-bordered">
+			<thead class = "table-dark">
+				<tr>
+					<th> Name</th>
+					<th> Mobile</th>
+					<th> Dob</th>
+					<th> Address</th>
+					<th> Aadhar</th>
+					<th> EmailId</th>
+					<th> Account Number</th>
+					<th> Basic Salary</th>
+					<th> Dearness Allowance</th>
+					<th> Designation</th>
+					<th> Department </th>
+					<th> Live Certificate </th>
+					<th> Death Certificate </th>
+					<th> Nominee Name </th>
+					<th> Nominee Address </th>
+					<th> Nominee Mobile </th>
+					<th> Nominee Aadhar</th>
+					<th> Nominee EmailId</th>
+
+					<th> Actions </th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each = "pensioner: ${pensioners}">
+					<td th:text = "${pensioner.name}"></td>
+					<td th:text = "${pensioner.mobile}"></td>
+					<td th:text = "${pensioner.dob}"></td>
+					<td th:text = "${pensioner.address}"></td>
+					<td th:text = "${pensioner.aadhar}"></td>
+					<td th:text = "${pensioner.emailId}"></td>
+					<td th:text = "${pensioner.accountNumber }"></td>
+					<td th:text = "${pensioner.basicSalary}"></td>
+					<td th:text = "${pensioner.dearnessAllowance}"></td>
+					<td th:text = "${pensioner.designation}"></td>
+					<td th:text = "${pensioner.department}"></td>
+					<td th:text = "${pensioner.liveCertificate}"></td>
+					<td th:text = "${pensioner.deathCertificate}"></td>
+					<td th:text = "${pensioner.nomineeName}"></td>
+					<td th:text = "${pensioner.nomineeAddress}"></td>
+					<td th:text = "${pensioner.nomineeMobile}"></td>
+					<td th:text = "${pensioner.nomineeAadhar}"></td>
+					<td th:text = "${pensioner.nomineeEmailId}"></td>
+				
+					<td>
+						<a th:href = "@{/pensioners/edit/{id}(id=${pensioner.id})}"
+						 class = "btn btn-primary">Update</a>
+						
+						<a th:href = "@{/pensioners/{id}(id=${pensioner.id})}"
+						 class = "btn btn-danger">Delete</a>
+						 
+					</td>
+				</tr>
+			</tbody>
+		
+		</table>
+		
+	</div>
+</body>
+</html>
